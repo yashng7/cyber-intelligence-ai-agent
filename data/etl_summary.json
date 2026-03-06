@@ -1,0 +1,10 @@
+{
+  "pdf_path": "./data/cyber_ireland_report.pdf",
+  "text_blocks": 223,
+  "tables_extracted": 10,
+  "chunks_created": 60,
+  "embeddings_loaded": 60,
+  "tables_loaded": 10,
+  "errors": [],
+  "elapsed_seconds": 194.3
+}
