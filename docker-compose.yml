@@ -1,0 +1,36 @@
+version: "3.8"
+
+services:
+  app:
+    build:
+      context: .
+      dockerfile: docker/Dockerfile
+    container_name: doc-intelligence-agent
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./data:/app/data
+      - ./chroma_store:/app/chroma_store
+      - ./logs:/app/logs
+    environment:
+      - GEMINI_API_KEY=${GEMINI_API_KEY}
+      - GEMINI_MODEL=${GEMINI_MODEL:-gemini-2.0-flash}
+      - PYTHONPATH=/app
+    restart: unless-stopped
+
+  etl:
+    build:
+      context: .
+      dockerfile: docker/Dockerfile
+    container_name: doc-intelligence-etl
+    volumes:
+      - ./data:/app/data
+      - ./chroma_store:/app/chroma_store
+      - ./logs:/app/logs
+    environment:
+      - GEMINI_API_KEY=${GEMINI_API_KEY}
+      - GEMINI_MODEL=${GEMINI_MODEL:-gemini-2.0-flash}
+      - PYTHONPATH=/app
+    command: ["python", "run_etl.py"]
+    profiles:
+      - etl

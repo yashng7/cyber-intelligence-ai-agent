@@ -1,0 +1,10 @@
+__pycache__/
+*.py[cod]
+*.so
+.env
+chroma_store/
+*.db
+*.duckdb
+logs/*.json
+.DS_Store
+venv/

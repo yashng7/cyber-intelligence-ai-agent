@@ -1,0 +1,16 @@
+PyMuPDF==1.23.8
+pdfplumber==0.10.3
+camelot-py[cv]==0.11.0
+tabula-py==2.9.0
+opencv-python-headless==4.9.0.80
+sentence-transformers==2.3.1
+chromadb==0.4.22
+duckdb==0.10.0
+pandas==2.2.0
+google-generativeai>=0.5.0,<1.0.0
+fastapi==0.109.2
+uvicorn[standard]==0.27.1
+pydantic==2.6.1
+structlog==24.1.0
+python-dotenv==1.0.1
+numpy==1.26.3
