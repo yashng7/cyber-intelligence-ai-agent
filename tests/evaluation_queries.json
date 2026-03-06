@@ -1,0 +1,20 @@
+[
+  {
+    "id": "q1",
+    "query": "What is the total number of jobs reported and where exactly is this stated?",
+    "expected_type": "factual_citation",
+    "requires": ["vector_search", "citation_verifier"]
+  },
+  {
+    "id": "q2",
+    "query": "Compare Pure Play firms in South-West vs National average",
+    "expected_type": "data_comparison",
+    "requires": ["table_lookup", "math_calculator"]
+  },
+  {
+    "id": "q3",
+    "query": "Calculate the CAGR needed to reach the 2030 job target from the current baseline",
+    "expected_type": "calculation",
+    "requires": ["table_lookup", "math_calculator", "citation_verifier"]
+  }
+]
